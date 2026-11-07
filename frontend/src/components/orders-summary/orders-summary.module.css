@@ -1,0 +1,35 @@
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+
+.tile {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.tile dt {
+  font-weight: 600;
+}
+
+.tile dd {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.pending {
+  border-color: var(--pending-bg);
+  background: var(--pending-bg);
+  color: var(--pending-ink);
+}
+
+.ready {
+  border-color: var(--ready-bg);
+  background: var(--ready-bg);
+  color: var(--ready-ink);
+}
