@@ -1,0 +1,60 @@
+/* La tarjeta se inspira en una comanda de cafetería. */
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--ink);
+  background: var(--surface);
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--muted);
+}
+
+.number {
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+.status {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pending {
+  background: var(--pending-bg);
+  color: var(--pending-ink);
+}
+
+.ready {
+  background: var(--ready-bg);
+  color: var(--ready-ink);
+}
+
+.item {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.5rem;
+  overflow-wrap: anywhere;
+}
+
+.detail {
+  margin: 0;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.edit {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-weight: 600;
+}

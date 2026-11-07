@@ -1,0 +1,20 @@
+.progress {
+  margin: 2rem 0;
+}
+
+.progress p {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.track {
+  height: 1rem;
+  border-radius: 999px;
+  background: var(--pending-bg);
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: var(--ready-ink);
+}
