@@ -1,15 +1,16 @@
 import { cookies } from "next/headers";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import OrderCard from "../../components/order-card/order-card";
 import OrdersSummary from "../../components/orders-summary/orders-summary";
 import type { OrderSummary } from "../../types/order-summary";
 
 type OrdersPageProps = {
-  searchParams: Promise<{ updated?: string }>;
+  searchParams: Promise<{ updated?: string; created?: string }>;
 };
 
 export default async function OrdersPage({ searchParams }: OrdersPageProps) {
-  const { updated } = await searchParams;
+  const { updated, created } = await searchParams;
 
   const cookieStore = await cookies();
   const token = cookieStore.get("coffee_token")?.value;
@@ -28,7 +29,15 @@ export default async function OrdersPage({ searchParams }: OrdersPageProps) {
   return (
     <main>
       <h1>Pedidos</h1>
+      <div className="actions">
+        <Link href="/orders/new" className="button">
+          Nuevo pedido
+        </Link>
+      </div>
 
+      {created === "1" && (
+        <p className="notice notice-success">Pedido creado correctamente.</p>
+      )}
       {updated === "1" && (
         <p className="notice notice-success">Pedido actualizado correctamente.</p>
       )}
